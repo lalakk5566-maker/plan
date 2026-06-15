@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>點擊跳圖遊戲</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #222;
+            color: white;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        #game-container {
+            position: relative;
+            width: 800px;
+            height: 600px;
+            background-color: #333;
+            border: 4px solid #fff;
+            overflow: hidden;
+            cursor: pointer;
+        }
+        #score {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            font-size: 24px;
+            z-index: 10;
+        }
+        .popup-image {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+            pointer-events: none;
+            animation: popUp 1.5s forwards;
+            z-index: 5;
+        }
+        @keyframes popUp {
+            0% { transform: scale(0.5) translateY(0); opacity: 1; }
+            100% { transform: scale(1.2) translateY(-150px); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+    <h1>點擊跳圖遊戲 🎉</h1>
+    <div id="game-container">
+        <div id="score">分數: 0</div>
+        <div id="click-area"></div>
+    </div>
+    <p>點擊畫面來跳出可愛圖片！（空格鍵也能玩）</p>
+
+    <script src="script.js"></script>
+</body>
+</html>
